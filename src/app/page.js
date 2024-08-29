@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 async function fetchProducts() {
-  const res = await fetch('https://webshop.wm3.se/api/v1/shop/products');
+  const res = await fetch("https://webshop.wm3.se/api/v1/shop/products");
   const data = await res.json();
   return data.products;
 }
@@ -27,7 +27,7 @@ export default function Home() {
       }
     }
     loadProducts();
-    
+
     import("bootstrap/dist/js/bootstrap.bundle.min.js")
       .then((module) => {})
       .catch((err) => {
@@ -40,7 +40,7 @@ export default function Home() {
       setFilteredProducts(products);
     } else {
       const query = searchQuery.toLowerCase();
-      const filtered = products.filter(product =>
+      const filtered = products.filter((product) =>
         product.name.toLowerCase().includes(query)
       );
       setFilteredProducts(filtered);
@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <main>
       <section
-        id="carouselExampleIndicators" 
+        id="carouselExampleIndicators"
         className="carousel slide"
         data-bs-ride="carousel"
       >
@@ -153,21 +153,21 @@ export default function Home() {
       </section>
 
       <section className="search-bar pt-5">
-  <div className="container">
-    <div className="row justify-content-center">
-      <div className="col-lg-11">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search for products..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
-    </div>
-  </div>
-</section>
-      
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-12">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search for products..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="product-grid py-3">
         <div className="container">
           <div className="row">
@@ -177,13 +177,13 @@ export default function Home() {
               filteredProducts.slice(0, 6).map((product) => (
                 <div key={product.id} className="col-lg-4 col-md-6">
                   <div className="placeholder-box">
-                    <img 
-                      src={product.product_image.url} 
-                      alt={product.name} 
+                    <img
+                      src={product.product_image.url}
+                      alt={product.name}
                       className="img-fluid"
                       onError={(e) => {
-                        e.target.onerror = null; 
-                        e.target.src="https://via.placeholder.com/150"; 
+                        e.target.onerror = null;
+                        e.target.src = "https://via.placeholder.com/150";
                       }}
                     />
                     <p className="product-name">{product.name}</p>
@@ -197,7 +197,7 @@ export default function Home() {
 
       <section className="features py-5">
         <div className="container">
-          <div className="row">
+          <div className="row gx-0">
             <div className="col-lg-6 mb-4">
               <div className="feature-box">
                 <div>
