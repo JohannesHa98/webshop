@@ -12,13 +12,16 @@ async function fetchProducts() {
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     async function loadProducts() {
       try {
         const data = await fetchProducts();
-        console.log(data); // Debug: Check if data is correct
+        console.log(data);
         setProducts(data);
+        setFilteredProducts(data);
       } catch (error) {
         console.error("Failed to fetch products", error);
       }
@@ -31,6 +34,18 @@ export default function Home() {
         console.error("Failed to load Bootstrap JavaScript", err);
       });
   }, []);
+
+  useEffect(() => {
+    if (searchQuery === "") {
+      setFilteredProducts(products);
+    } else {
+      const query = searchQuery.toLowerCase();
+      const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(query)
+      );
+      setFilteredProducts(filtered);
+    }
+  }, [searchQuery, products]);
 
   return (
     <main>
@@ -137,13 +152,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="product-grid py-5">
+      <section className="search-bar pt-5">
+  <div className="container">
+    <div className="row justify-content-center">
+      <div className="col-lg-11">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search for products..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+      
+      <section className="product-grid py-3">
         <div className="container">
           <div className="row">
-            {products.length === 0 ? (
+            {filteredProducts.length === 0 ? (
               <p>Loading products...</p>
             ) : (
-              products.slice(0, 6).map((product) => (
+              filteredProducts.slice(0, 6).map((product) => (
                 <div key={product.id} className="col-lg-4 col-md-6">
                   <div className="placeholder-box">
                     <img 
@@ -179,7 +210,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-6 mb-4">
-              <div className="feature-box">
+              <div className="feature-box-2">
                 <div>
                   <h3>Run Like a Cheetah</h3>
                   <p>
