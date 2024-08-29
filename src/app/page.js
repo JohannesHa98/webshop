@@ -1,11 +1,30 @@
 "use client";
 
 import "./globals.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+async function fetchProducts() {
+  const res = await fetch('https://webshop.wm3.se/api/v1/shop/products');
+  const data = await res.json();
+  return data.products;
+}
+
 export default function Home() {
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
+    async function loadProducts() {
+      try {
+        const data = await fetchProducts();
+        console.log(data); // Debug: Check if data is correct
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to fetch products", error);
+      }
+    }
+    loadProducts();
+    
     import("bootstrap/dist/js/bootstrap.bundle.min.js")
       .then((module) => {})
       .catch((err) => {
@@ -17,15 +36,15 @@ export default function Home() {
     <main>
       <section
         id="carouselExampleIndicators" 
-        class="carousel slide"
+        className="carousel slide"
         data-bs-ride="carousel"
       >
-        <div class="carousel-indicators">
+        <div className="carousel-indicators">
           <button
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="0"
-            class="active"
+            className="active"
             aria-label="Slide 1"
             aria-current="true"
           ></button>
@@ -34,20 +53,18 @@ export default function Home() {
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="1"
             aria-label="Slide 2"
-            class=""
           ></button>
           <button
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="2"
             aria-label="Slide 3"
-            class=""
           ></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
             <svg
-              class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+              className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
               width="800"
               height="400"
               xmlns="http://www.w3.org/2000/svg"
@@ -69,9 +86,9 @@ export default function Home() {
               </text>
             </svg>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <svg
-              class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+              className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
               width="800"
               height="400"
               xmlns="http://www.w3.org/2000/svg"
@@ -93,9 +110,9 @@ export default function Home() {
               </text>
             </svg>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <svg
-              class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+              className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
               width="800"
               height="400"
               xmlns="http://www.w3.org/2000/svg"
@@ -120,42 +137,38 @@ export default function Home() {
         </div>
       </section>
 
-      <section class="product-grid py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="placeholder-box"></div>
-              <p>Nike Zoom Lebron Soldier 10</p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="placeholder-box"></div>
-              <p>Jordan Ultra Fly</p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="placeholder-box"></div>
-              <p>Lebron XIII Limited</p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="placeholder-box"></div>
-              <p>Jordan Ultra Fly</p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="placeholder-box"></div>
-              <p>Kyrie 2</p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="placeholder-box"></div>
-              <p>Lebron XIII Limited</p>
-            </div>
+      <section className="product-grid py-5">
+        <div className="container">
+          <div className="row">
+            {products.length === 0 ? (
+              <p>Loading products...</p>
+            ) : (
+              products.slice(0, 6).map((product) => (
+                <div key={product.id} className="col-lg-4 col-md-6">
+                  <div className="placeholder-box">
+                    <img 
+                      src={product.product_image.url} 
+                      alt={product.name} 
+                      className="img-fluid"
+                      onError={(e) => {
+                        e.target.onerror = null; 
+                        e.target.src="https://via.placeholder.com/150"; 
+                      }}
+                    />
+                    <p className="product-name">{product.name}</p>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </section>
 
-      <section class="features py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 mb-4">
-              <div class="feature-box">
+      <section className="features py-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 mb-4">
+              <div className="feature-box">
                 <div>
                   <h3>Fight Like a Spider</h3>
                   <p>
@@ -165,8 +178,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 mb-4">
-              <div class="feature-box">
+            <div className="col-lg-6 mb-4">
+              <div className="feature-box">
                 <div>
                   <h3>Run Like a Cheetah</h3>
                   <p>
