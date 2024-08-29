@@ -17,7 +17,7 @@ export default function Home() {
     <main>
       <div
         id="carouselExampleIndicators" 
-        class="carousel slide w-98 mx-auto mt-4"
+        class="carousel slide"
         data-bs-ride="carousel"
       >
         <div class="carousel-indicators">
