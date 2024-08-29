@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main>
-      <div
+      <section
         id="carouselExampleIndicators" 
         class="carousel slide"
         data-bs-ride="carousel"
@@ -118,7 +118,67 @@ export default function Home() {
             </svg>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section class="product-grid py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="placeholder-box"></div>
+              <p>Nike Zoom Lebron Soldier 10</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="placeholder-box"></div>
+              <p>Jordan Ultra Fly</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="placeholder-box"></div>
+              <p>Lebron XIII Limited</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="placeholder-box"></div>
+              <p>Jordan Ultra Fly</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="placeholder-box"></div>
+              <p>Kyrie 2</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="placeholder-box"></div>
+              <p>Lebron XIII Limited</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mb-4">
+              <div class="feature-box">
+                <div>
+                  <h3>Fight Like a Spider</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="feature-box">
+                <div>
+                  <h3>Run Like a Cheetah</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
