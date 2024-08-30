@@ -197,27 +197,19 @@ export default function Home() {
 
       <section className="features py-5">
         <div className="container">
-          <div className="row gx-0">
-            <div className="col-lg-6 mb-4">
-              <div className="feature-box">
-                <div>
-                  <h3>Fight Like a Spider</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
+          <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center">
+            <div className="feature-box mb-4 mb-lg-0">
+              <div>
+                <h3>Fight Like a Spider</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#">Read More</a>
               </div>
             </div>
-            <div className="col-lg-6 mb-4">
-              <div className="feature-box-2">
-                <div>
-                  <h3>Run Like a Cheetah</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
+            <div className="feature-box-2">
+              <div>
+                <h3>Run Like a Cheetah</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#">Read More</a>
               </div>
             </div>
           </div>
