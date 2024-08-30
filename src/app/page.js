@@ -48,6 +48,22 @@ export default function Home() {
 
   return (
     <main>
+      <nav className="navbar navbar-expand navbar-dark fixed-top">
+        <div className="container d-flex justify-content-between">
+          <a className="navbar-brand" href="#">
+            SPORTSHOES.COM
+          </a>
+          <div className="navbar-nav">
+            <a className="nav-link" href="#">
+              Men
+            </a>
+            <a className="nav-link" href="#">
+              Women
+            </a>
+          </div>
+        </div>
+      </nav>
+
       <section
         id="carouselExampleIndicators"
         className="carousel slide"
@@ -80,7 +96,7 @@ export default function Home() {
             <svg
               className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
               width="800"
-              height="400"
+              height="460"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
               aria-label="Placeholder: First slide"
@@ -104,7 +120,7 @@ export default function Home() {
             <svg
               className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
               width="800"
-              height="400"
+              height="460"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
               aria-label="Placeholder: Second slide"
@@ -128,7 +144,7 @@ export default function Home() {
             <svg
               className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
               width="800"
-              height="400"
+              height="460"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
               aria-label="Placeholder: Third slide"
