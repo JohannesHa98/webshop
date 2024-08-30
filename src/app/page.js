@@ -19,7 +19,6 @@ export default function Home() {
     async function loadProducts() {
       try {
         const data = await fetchProducts();
-        console.log(data);
         setProducts(data);
         setFilteredProducts(data);
       } catch (error) {
@@ -152,42 +151,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="search-bar pt-5">
+      <section className="product-grid pt-5">
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-12">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search for products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
+          <div className="search-bar mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search for products..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
-        </div>
-      </section>
-
-      <section className="product-grid py-3">
-        <div className="container">
-          <div className="row">
+          <div className="product-grid">
             {filteredProducts.length === 0 ? (
               <p>Loading products...</p>
             ) : (
               filteredProducts.slice(0, 6).map((product) => (
-                <div key={product.id} className="col-lg-4 col-md-6">
-                  <div className="placeholder-box">
-                    <img
-                      src={product.product_image.url}
-                      alt={product.name}
-                      className="img-fluid"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://via.placeholder.com/150";
-                      }}
-                    />
-                    <p className="product-name">{product.name}</p>
-                  </div>
+                <div key={product.id} className="placeholder-box">
+                  <img
+                    src={product.product_image.url}
+                    alt={product.name}
+                    className="img-fluid mt-2"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "https://via.placeholder.com/150";
+                    }}
+                  />
+                  <p className="product-name">{product.name}</p>
                 </div>
               ))
             )}
