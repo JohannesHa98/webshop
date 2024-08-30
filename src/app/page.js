@@ -198,7 +198,7 @@ export default function Home() {
       <section className="features py-5">
         <div className="container">
           <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center">
-            <div className="feature-box mb-4 mb-lg-0">
+            <div className="feature-box">
               <div>
                 <h3>Fight Like a Spider</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
