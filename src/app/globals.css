@@ -26,6 +26,66 @@ body {
   color: #ccc;
 }
 
+.custom-slide {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-slide-1 {
+  background-image: url("/images/BG2.jpg");
+  height: 100vh;
+}
+
+.custom-slide-2 {
+  background-image: url("/images/BG3.jpg");
+  height: 100vh;
+}
+
+.custom-slide-3 {
+  background-image: url("/images/BG1.jpg");
+  height: 100vh;
+}
+
+.carousel-content {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.text-container {
+  position: relative;
+}
+
+.title {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.button-group a {
+  margin-right: 10px;
+}
+
+.rotated-image {
+  position: absolute;
+  top: -34%;
+  left: 116%;
+  transform: rotate(340deg) translate(-50%, -50%);
+  z-index: 100;
+  width: 500px;
+  height: auto;
+}
+
 .search-bar .form-control {
   border-radius: 5px;
   width: 100%;

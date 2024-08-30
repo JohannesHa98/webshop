@@ -3,6 +3,7 @@
 import "./globals.css";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Image from "next/image";
 
 async function fetchProducts() {
   const res = await fetch("https://webshop.wm3.se/api/v1/shop/products");
@@ -92,78 +93,33 @@ export default function Home() {
           ></button>
         </div>
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <svg
-              className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-              width="800"
-              height="460"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: First slide"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777"></rect>
-              <text
-                x="50%"
-                y="50%"
-                fill="#555"
-                text-anchor="middle"
-                dominant-baseline="middle"
-              >
-                ONE
-              </text>
-            </svg>
+          <div className="carousel-item active custom-slide custom-slide-1">
+            <div className="carousel-content d-flex align-items-center justify-content-center">
+              <div className="text-container">
+                <h1 className="title">LEBRON XIII 25K</h1>
+                <p className="subtitle">Started from 728$</p>
+                <div className="button-group">
+                  <a href="#" className="btn btn-primary">
+                    BUY NOW
+                  </a>
+                  <a href="#" className="btn btn-secondary">
+                    LEARN MORE
+                  </a>
+                </div>
+                <div className="image-container">
+                  <Image
+                    src="/images/shoepng.png"
+                    alt="Shoe"
+                    className="rotated-image"
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="carousel-item">
-            <svg
-              className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-              width="800"
-              height="460"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: Second slide"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#666"></rect>
-              <text
-                x="50%"
-                y="50%"
-                fill="#444"
-                text-anchor="middle"
-                dominant-baseline="middle"
-              >
-                TWO
-              </text>
-            </svg>
-          </div>
-          <div className="carousel-item">
-            <svg
-              className="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-              width="800"
-              height="460"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: Third slide"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#555"></rect>
-              <text
-                x="50%"
-                y="50%"
-                fill="#333"
-                text-anchor="middle"
-                dominant-baseline="middle"
-              >
-                THREE
-              </text>
-            </svg>
-          </div>
+          <div className="carousel-item custom-slide custom-slide-2"></div>
+          <div className="carousel-item custom-slide custom-slide-3"></div>
         </div>
       </section>
 
