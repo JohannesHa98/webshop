@@ -123,8 +123,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="product-grid">
-        <div className="container">
+      <section className="product-grid-1">
+        <div className="container-fluid">
           <div className="product-grid-container">
             <div className="search-bar mb-3">
               <input
