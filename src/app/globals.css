@@ -90,6 +90,7 @@ body {
   width: 60%;
   max-width: 1130px;
   margin: 0 auto;
+  padding-top: 80px;
 }
 
 .search-bar .form-control {
@@ -112,10 +113,13 @@ body {
   overflow: hidden;
   transition: transform 0.2s;
   aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-grid .placeholder-box img {
-  width: 100%;
+  width: 92%;
   height: 70%;
   object-fit: cover;
 }
@@ -125,8 +129,23 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
   .product-grid .container {
     width: 100%;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
@@ -136,10 +155,14 @@ body {
   align-self: flex-start;
 }
 
+.features{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .features .container {
   width: 60%;
   max-width: 1130px;
-  max-height: 650px;
 }
 
 .feature-box,

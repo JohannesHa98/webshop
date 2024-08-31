@@ -123,7 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="product-grid pt-5">
+      <section className="product-grid">
         <div className="container">
           <div className="product-grid-container">
             <div className="search-bar mb-3">
@@ -159,7 +159,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="features py-5">
+      <section className="features">
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
             <div className="feature-box">
