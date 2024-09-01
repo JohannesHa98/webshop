@@ -64,18 +64,18 @@ export default function Home() {
   }, [searchQuery, products]);
 
   return (
-    <main>
+    <main className={`${barlowCondensedMedium.className}`}>
       <nav className="navbar navbar-expand navbar-dark fixed-top">
-        <div className="container d-flex justify-content-between">
+        <div className="container-fluid d-flex justify-content-between">
           <a className="navbar-brand" href="#">
             SPORTSHOES.COM
           </a>
           <div className="navbar-nav">
             <a className="nav-link" href="#">
-              Men
+              MEN
             </a>
             <a className="nav-link" href="#">
-              Women
+              WOMEN
             </a>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function Home() {
             aria-label="Slide 3"
           ></button>
         </div>
-        <div className={`carousel-inner ${barlowCondensedMedium.className}`}>
+        <div className="carousel-inner">
           <div className="carousel-item active custom-slide custom-slide-1">
             <div className="carousel-content d-flex align-items-center justify-content-center">
               <div className="text-container">
