@@ -13,7 +13,9 @@ async function fetchProducts() {
 }
 
 async function searchProducts(query) {
-  const res = await fetch(`https://webshop.wm3.se/api/v1/shop/products/search?q=${query}&media_file=true`);
+  const res = await fetch(
+    `https://webshop.wm3.se/api/v1/shop/products/search?q=${query}&media_file=true`
+  );
   const data = await res.json();
   return data.products;
 }
@@ -27,6 +29,9 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [navbarVisible, setNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [bgColor, setBgColor] = useState("transparent");
 
   useEffect(() => {
     async function loadProducts() {
@@ -63,9 +68,34 @@ export default function Home() {
     handleSearch();
   }, [searchQuery, products]);
 
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > lastScrollY) {
+        setNavbarVisible(false);
+      } else {
+        setNavbarVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+
+      if (window.scrollY <= 200) {
+        setBgColor("rgba(0, 0, 0, 0)");
+      } else {
+        setBgColor("black");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <main className={`${barlowCondensedMedium.className}`}>
-      <nav className="navbar navbar-expand navbar-dark fixed-top">
+      <nav
+        className={`navbar navbar-expand navbar-dark fixed-top ${
+          navbarVisible ? "visible" : "hidden"
+        } ${bgColor === "black" ? "bg-active" : ""}`}
+        style={{ backgroundColor: bgColor }}
+      >
         <div className="container-fluid d-flex justify-content-between">
           <a className="navbar-brand" href="#">
             SPORTSHOES.COM
@@ -245,7 +275,7 @@ export default function Home() {
             </div>
             <div className="feature-box-2">
               <div>
-                <h3>Run Like a Cheetah</h3>
+                <h3>Made with Ultra-Lite</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <a href="#">Read More</a>
               </div>
