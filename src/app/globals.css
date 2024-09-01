@@ -161,6 +161,7 @@ body {
   width: 60%;
   margin: 0 auto;
   padding-top: 80px;
+  max-width: 1200px;
 }
 
 .search-bar .form-control {
@@ -222,7 +223,7 @@ body {
 
 .features .container {
   width: 60%;
-  max-width: 1130px;
+  max-width: 1200px;
 }
 
 .feature-box,

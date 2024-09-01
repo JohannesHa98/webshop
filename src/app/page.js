@@ -187,40 +187,40 @@ export default function Home() {
       </section>
 
       <section className="product-grid-1">
-        <div className="container-fluid">
-          <div className="product-grid-container">
-            <div className="search-bar mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search for products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+  <div className="container-fluid">
+    <div className="product-grid-container">
+      <div className="search-bar mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search for products..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+      <div className="product-grid">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.slice(0, 6).map((product) => (
+            <div key={product.id} className="placeholder-box">
+              <img
+                src={product.product_image.url}
+                alt={product.name}
+                className="img-fluid mt-4"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/150";
+                }}
               />
+              <p className="product-name">{product.name}</p>
             </div>
-            <div className="product-grid">
-              {filteredProducts.length === 0 ? (
-                <p>Loading products...</p>
-              ) : (
-                filteredProducts.slice(0, 6).map((product) => (
-                  <div key={product.id} className="placeholder-box">
-                    <img
-                      src={product.product_image.url}
-                      alt={product.name}
-                      className="img-fluid mt-4"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://via.placeholder.com/150";
-                      }}
-                    />
-                    <p className="product-name">{product.name}</p>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+          ))
+        ) : (
+          <p>No products available</p>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="features">
         <div className="container">
