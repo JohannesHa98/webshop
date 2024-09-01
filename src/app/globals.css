@@ -34,7 +34,7 @@ body {
 }
 
 .custom-slide-1 {
-  background-image: url("/images/BG2.jpg");
+  background-image: url("/images/BG1.jpg");
   height: 100vh;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 .custom-slide-3 {
-  background-image: url("/images/BG1.jpg");
+  background-image: url("/images/BG2.jpg");
   height: 100vh;
 }
 
@@ -58,32 +58,103 @@ body {
 
 .text-container {
   position: relative;
+  margin-left: -17%;
+  margin-top: 4%;
 }
 
 .title {
-  font-size: 5rem;
-  margin-bottom: 0.5rem;
-  color: black;
+  font-size: 10rem;
+  color: rgb(29, 27, 27);
 }
 
 .subtitle {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  font-weight: 800;
+  display: flex;
+  align-items: baseline;
+  font-size: 1.2rem;
+  margin-top: -4%;
+  margin-left: 1.2%;
+}
+.subtitle-price {
+  padding-left: 4px;
+  font-size: 2.7rem;
 }
 
-.button-group a {
-  margin-right: 10px;
+.button-group {
+  display: flex;
+  margin-top: -1%;
+  margin-left: 1.2%;
+}
+
+.button-group .btn-primary,
+.button-group .btn-outline-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-group .btn-primary {
+  background-color: white;
+  border: 2px solid white;
+  width: 175px;
+  height: 50px;
+  color: black;
+  font-weight: bold;
+  transition: background-color 0.3s, border-color 0.3s; 
+  margin-right: 28px;
+}
+
+.button-group .btn-primary:hover {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+.button-group .btn-outline-primary {
+  border: 2px solid white;
+  color: white;
+  width: 175px;
+  height: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button-group .btn-outline-primary:hover {
+  background-color: black;
+  border-color: black;
+  color: white;
 }
 
 .rotated-image {
   position: absolute;
-  top: -34%;
-  left: 116%;
+  top: -24%;
+  left: 120%;
   transform: rotate(340deg) translate(-50%, -50%);
   z-index: 100;
-  width: 500px;
+  width: 730px;
   height: auto;
+}
+
+@media (max-width: 1024px) {
+  .rotated-image {
+    width: 400px; 
+    left: 40%;
+    top: -20%;
+  }
+  .title{
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .rotated-image {
+    width: 300px; 
+    left: 40%;
+    top: -10%; 
+  }
+  .title{
+    font-size: 3rem;
+  }
 }
 
 .product-grid-1 .container-fluid {

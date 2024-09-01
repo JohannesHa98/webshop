@@ -4,12 +4,18 @@ import "./globals.css";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
+import { Barlow_Condensed } from "next/font/google";
 
 async function fetchProducts() {
   const res = await fetch("https://webshop.wm3.se/api/v1/shop/products");
   const data = await res.json();
   return data.products;
 }
+
+const barlowCondensedMedium = Barlow_Condensed({
+  weight: "500",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -92,17 +98,20 @@ export default function Home() {
             aria-label="Slide 3"
           ></button>
         </div>
-        <div className="carousel-inner">
+        <div className={`carousel-inner ${barlowCondensedMedium.className}`}>
           <div className="carousel-item active custom-slide custom-slide-1">
             <div className="carousel-content d-flex align-items-center justify-content-center">
               <div className="text-container">
                 <h1 className="title">LEBRON XIII 25K</h1>
-                <p className="subtitle">Started from 728$</p>
+                <div className="subtitle">
+                  <p>Started From</p>
+                  <p className="subtitle-price">728$</p>
+                </div>
                 <div className="button-group">
                   <a href="#" className="btn btn-primary">
-                    BUY NOW
+                    <span className="btn-text">BUY NOW</span>
                   </a>
-                  <a href="#" className="btn btn-secondary">
+                  <a href="#" className="btn btn-outline-primary">
                     LEARN MORE
                   </a>
                 </div>
@@ -118,8 +127,62 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="carousel-item custom-slide custom-slide-2"></div>
-          <div className="carousel-item custom-slide custom-slide-3"></div>
+          <div className="carousel-item custom-slide custom-slide-2">
+          <div className="carousel-content d-flex align-items-center justify-content-center">
+              <div className="text-container">
+                <h1 className="title">LEBRON XIII 25K</h1>
+                <div className="subtitle">
+                  <p>Started From</p>
+                  <p className="subtitle-price">728$</p>
+                </div>
+                <div className="button-group">
+                  <a href="#" className="btn btn-primary">
+                    <span className="btn-text">BUY NOW</span>
+                  </a>
+                  <a href="#" className="btn btn-outline-primary">
+                    LEARN MORE
+                  </a>
+                </div>
+                <div className="image-container">
+                  <Image
+                    src="/images/shoepng.png"
+                    alt="Shoe"
+                    className="rotated-image"
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item custom-slide custom-slide-3">
+          <div className="carousel-content d-flex align-items-center justify-content-center">
+              <div className="text-container">
+                <h1 className="title">LEBRON XIII 25K</h1>
+                <div className="subtitle">
+                  <p>Started From</p>
+                  <p className="subtitle-price">728$</p>
+                </div>
+                <div className="button-group">
+                  <a href="#" className="btn btn-primary">
+                    <span className="btn-text">BUY NOW</span>
+                  </a>
+                  <a href="#" className="btn btn-outline-primary">
+                    LEARN MORE
+                  </a>
+                </div>
+                <div className="image-container">
+                  <Image
+                    src="/images/shoepng.png"
+                    alt="Shoe"
+                    className="rotated-image"
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
