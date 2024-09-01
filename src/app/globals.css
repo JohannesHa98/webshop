@@ -377,3 +377,32 @@ body {
   position: relative;
   z-index: 2;
 }
+
+.features .feature-text{
+padding-left: 18px;
+padding-bottom: 45px;
+}
+
+.features .feature-title {
+  font-size: 38px;
+  margin: 0;
+}
+
+.features .feature-description {
+  font-size: 18px;
+  width: 55%;
+  color: grey;
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+.features .feature-link {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .features .feature-description {
+    width: 70%;
+  }
+}
+

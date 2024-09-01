@@ -267,17 +267,27 @@ export default function Home() {
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
             <div className="feature-box">
-              <div>
-                <h3>Fight Like a Spider</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#">Read More</a>
+              <div className="feature-text">
+                <h3 className="feature-title">FIGHT LIKE A SPIDER</h3>
+                <p className="feature-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a className="feature-link" href="#">
+                  Read More
+                </a>
               </div>
             </div>
             <div className="feature-box-2">
-              <div>
-                <h3>Made with Ultra-Lite</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#">Read More</a>
+            <div className="feature-text">
+                <h3 className="feature-title">RUN LIKE A CHEETAH</h3>
+                <p className="feature-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a className="feature-link" href="#">
+                  Read More
+                </a>
               </div>
             </div>
           </div>
