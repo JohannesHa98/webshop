@@ -12,6 +12,12 @@ async function fetchProducts() {
   return data.products;
 }
 
+async function searchProducts(query) {
+  const res = await fetch(`https://webshop.wm3.se/api/v1/shop/products/search?q=${query}&media_file=true`);
+  const data = await res.json();
+  return data.products;
+}
+
 const barlowCondensedMedium = Barlow_Condensed({
   weight: "500",
   subsets: ["latin"],
@@ -42,15 +48,19 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (searchQuery === "") {
-      setFilteredProducts(products);
-    } else {
-      const query = searchQuery.toLowerCase();
-      const filtered = products.filter((product) =>
-        product.name.toLowerCase().includes(query)
-      );
-      setFilteredProducts(filtered);
+    async function handleSearch() {
+      try {
+        if (searchQuery === "") {
+          setFilteredProducts(products);
+        } else {
+          const data = await searchProducts(searchQuery);
+          setFilteredProducts(data);
+        }
+      } catch (error) {
+        console.error("Failed to search products", error);
+      }
     }
+    handleSearch();
   }, [searchQuery, products]);
 
   return (
@@ -122,13 +132,14 @@ export default function Home() {
                     className="rotated-image"
                     width={500}
                     height={500}
+                    priority
                   />
                 </div>
               </div>
             </div>
           </div>
           <div className="carousel-item custom-slide custom-slide-2">
-          <div className="carousel-content d-flex align-items-center justify-content-center">
+            <div className="carousel-content d-flex align-items-center justify-content-center">
               <div className="text-container">
                 <h1 className="title">LEBRON XIII 25K</h1>
                 <div className="subtitle">
@@ -156,7 +167,7 @@ export default function Home() {
             </div>
           </div>
           <div className="carousel-item custom-slide custom-slide-3">
-          <div className="carousel-content d-flex align-items-center justify-content-center">
+            <div className="carousel-content d-flex align-items-center justify-content-center">
               <div className="text-container">
                 <h1 className="title">LEBRON XIII 25K</h1>
                 <div className="subtitle">
@@ -187,40 +198,40 @@ export default function Home() {
       </section>
 
       <section className="product-grid-1">
-  <div className="container-fluid">
-    <div className="product-grid-container">
-      <div className="search-bar mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search for products..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
-      <div className="product-grid">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.slice(0, 6).map((product) => (
-            <div key={product.id} className="placeholder-box">
-              <img
-                src={product.product_image.url}
-                alt={product.name}
-                className="img-fluid mt-4"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://via.placeholder.com/150";
-                }}
+        <div className="container-fluid">
+          <div className="product-grid-container">
+            <div className="search-bar mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search product..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <p className="product-name">{product.name}</p>
             </div>
-          ))
-        ) : (
-          <p>No products available</p>
-        )}
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="product-grid">
+              {filteredProducts.length > 0 ? (
+                filteredProducts.slice(0, 6).map((product) => (
+                  <div key={product.id} className="placeholder-box">
+                    <img
+                      src={product.product_image.url}
+                      alt={product.name}
+                      className="img-fluid mt-4"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://via.placeholder.com/150";
+                      }}
+                    />
+                    <p className="product-name">{product.name}</p>
+                  </div>
+                ))
+              ) : (
+                <p>No products available</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="features">
         <div className="container">
