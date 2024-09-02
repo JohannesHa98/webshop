@@ -230,7 +230,7 @@ export default function Home() {
       <section className="product-grid-1">
         <div className="container-fluid">
           <div className="product-grid-container">
-            <div className="search-bar mb-3">
+            <div className="search-bar mb-3 position-relative">
               <input
                 type="text"
                 className="form-control"
@@ -238,11 +238,27 @@ export default function Home() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+              <div className="search-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </div>
             </div>
             <div className="product-grid">
               {filteredProducts.length > 0 ? (
                 filteredProducts.slice(0, 6).map((product) => (
-                  <div key={product.id} className="placeholder-box">
+                  <a href="#" key={product.id} className="placeholder-box">
                     <img
                       src={product.product_image.url}
                       alt={product.name}
@@ -253,7 +269,7 @@ export default function Home() {
                       }}
                     />
                     <p className="product-name">{product.name}</p>
-                  </div>
+                  </a>
                 ))
               ) : (
                 <p>No products available</p>
@@ -279,7 +295,7 @@ export default function Home() {
               </div>
             </div>
             <div className="feature-box-2">
-            <div className="feature-text">
+              <div className="feature-text">
                 <h3 className="feature-title">RUN LIKE A CHEETAH</h3>
                 <p className="feature-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
