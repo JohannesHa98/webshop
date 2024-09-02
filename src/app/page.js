@@ -279,29 +279,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="features">
+      <section className="banners">
         <div className="container">
           <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <div className="feature-box">
-              <div className="feature-text">
-                <h3 className="feature-title">FIGHT LIKE A SPIDER</h3>
-                <p className="feature-description">
+            <div className="banner-box">
+              <div className="banner-text">
+                <h3 className="banner-title">FIGHT LIKE A SPIDER</h3>
+                <p className="banner-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a className="feature-link" href="#">
+                <a className="banner-link" href="#">
                   READ MORE
                 </a>
               </div>
             </div>
-            <div className="feature-box-2">
-              <div className="feature-text">
-                <h3 className="feature-title">RUN LIKE A CHEETAH</h3>
-                <p className="feature-description">
+            <div className="banner-box-2">
+              <div className="banner-text">
+                <h3 className="banner-title">RUN LIKE A CHEETAH</h3>
+                <p className="banner-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a className="feature-link" href="#">
+                <a className="banner-link" href="#">
                   READ MORE
                 </a>
               </div>

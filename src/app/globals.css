@@ -2,6 +2,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Navbar */
+
 .navbar {
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
@@ -71,6 +73,8 @@ body {
 .navbar.bg-active .navbar-nav .nav-link:hover {
   color: white;
 }
+
+/* Carousel */
 
 .custom-slide {
   height: 500px;
@@ -246,6 +250,8 @@ body {
   }
 }
 
+/* Products */
+
 .product-grid-1 .container-fluid {
   width: 60%;
   margin: 0 auto;
@@ -339,18 +345,20 @@ body {
   }
 }
 
-.features {
+/* Banners */
+
+.banners {
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
-.features .container {
+.banners .container {
   width: 60%;
   max-width: 1200px;
 }
 
-.feature-box,
-.feature-box-2 {
+.banner-box,
+.banner-box-2 {
   color: white;
   background-size: cover;
   background-position: center;
@@ -365,27 +373,27 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .features .container {
+  .banners .container {
     width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .features .container {
+  .banners .container {
     width: 100%;
   }
 }
 
-.feature-box {
+.banner-box {
   background-image: url("/images/Muay.jpg");
 }
 
-.feature-box-2 {
+.banner-box-2 {
   background-image: url("/images/Sprint.jpg");
 }
 
-.feature-box:before,
-.feature-box-2:before {
+.banner-box:before,
+.banner-box-2:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -401,39 +409,39 @@ body {
   z-index: 1;
 }
 
-.feature-box h3,
-.feature-box-2 h3 {
+.banner-box h3,
+.banner-box-2 h3 {
   font-size: 24px;
   position: relative;
   z-index: 2;
 }
 
-.feature-box p,
-.feature-box-2 p {
+.banner-box p,
+.banner-box-2 p {
   font-size: 16px;
   position: relative;
   z-index: 2;
 }
 
-.feature-box a,
-.feature-box-2 a {
+.banner-box a,
+.banner-box-2 a {
   color: white;
   text-decoration: underline;
   position: relative;
   z-index: 2;
 }
 
-.features .feature-text {
+.banners .banner-text {
   padding-left: 18px;
   padding-bottom: 45px;
 }
 
-.features .feature-title {
+.banners .banner-title {
   font-size: 38px;
   margin: 0;
 }
 
-.features .feature-description {
+.banners .banner-description {
   font-size: 18px;
   width: 55%;
   color: grey;
@@ -441,12 +449,12 @@ body {
   margin-bottom: 6px;
 }
 
-.features .feature-link {
+.banners .banner-link {
   font-size: 22px;
 }
 
 @media (max-width: 768px) {
-  .features .feature-description {
+  .banners .banner-description {
     width: 70%;
   }
 }
