@@ -84,17 +84,17 @@ body {
 }
 
 .custom-slide-1 {
-  background-image: url("/images/BG1.jpg");
+  background-image: url("/images/bg2.jpg");
   height: 100vh;
 }
 
 .custom-slide-2 {
-  background-image: url("/images/BG3.jpg");
+  background-image: url("/images/bg1.jpg");
   height: 100vh;
 }
 
 .custom-slide-3 {
-  background-image: url("/images/BG2.jpg");
+  background-image: url("/images/bg3.jpg");
   height: 100vh;
 }
 
@@ -385,11 +385,11 @@ body {
 }
 
 .banner-box {
-  background-image: url("/images/Muay.jpg");
+  background-image: url("/images/muay-thai.jpg");
 }
 
 .banner-box-2 {
-  background-image: url("/images/Sprint.jpg");
+  background-image: url("/images/sprinter.jpg");
 }
 
 .banner-box:before,
