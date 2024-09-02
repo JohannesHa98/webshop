@@ -106,6 +106,10 @@ body {
   color: rgb(29, 27, 27);
 }
 
+.title-color {
+  color: yellow;
+}
+
 .subtitle {
   display: flex;
   align-items: baseline;

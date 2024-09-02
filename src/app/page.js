@@ -171,7 +171,7 @@ export default function Home() {
           <div className="carousel-item custom-slide custom-slide-2">
             <div className="carousel-content d-flex align-items-center justify-content-center">
               <div className="text-container">
-                <h1 className="title">LEBRON XIII 25K</h1>
+                <h1 className="title title-color">LEBRON XIII 25K</h1>
                 <div className="subtitle">
                   <p>Started From</p>
                   <p className="subtitle-price">728$</p>
