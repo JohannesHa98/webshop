@@ -1,9 +1,8 @@
 "use client";
 
-import "./globals.css";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Image from "next/image";
+import "./globals.css";
 import { Barlow_Condensed } from "next/font/google";
 
 async function fetchProducts() {
@@ -53,7 +52,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    async function handleSearch() {
+    const timeoutId = setTimeout(async () => {
       try {
         if (searchQuery === "") {
           setFilteredProducts(products);
@@ -64,8 +63,9 @@ export default function Home() {
       } catch (error) {
         console.error("Failed to search products", error);
       }
-    }
-    handleSearch();
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
   }, [searchQuery, products]);
 
   useEffect(() => {
