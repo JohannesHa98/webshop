@@ -85,6 +85,22 @@ body {
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
+@media (max-width: 767px) {
+  .custom-slide-1 {
+    background-image: url("/images/slide1-small.jpg");
+  }
+  .carousel-content {
+    top: 77%;
+    left: 23.2%;
+  }
+  .button-group .btn-primary,
+  .button-group .btn-outline-primary {
+    width: 20vw;
+    height: 6vw;
+    font-size: 2vw;
+  }
+}
+
 .button-group .btn-primary {
   background-color: white;
   border: 2px solid white;
@@ -157,4 +173,14 @@ body {
   transform: scale(0.99);
   height: 84%;
   object-fit: cover;
+}
+
+.banner-description{
+  width: 55%;
+}
+
+@media (max-width: 1199px) {
+  .banner-description{
+    width: 75%;
+  }
 }

@@ -98,7 +98,7 @@ export default function Home() {
       }
       setLastScrollY(window.scrollY);
 
-      if (window.scrollY <= 200) {
+      if (window.scrollY <= 100) {
         setBgColor("rgba(0, 0, 0, 0)");
       } else {
         setBgColor("black");
@@ -299,17 +299,17 @@ export default function Home() {
                 className="banner-box d-flex align-items-end text-white p-3"
                 style={{
                   backgroundImage: 'url("/images/muay.jpg")',
-                  height: "650px",
+                  height: "750px",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <div className="banner-text ps-3 pb-5">
-                  <h3 className="banner-title fs-3 position-relative">
+                <div className="banner-text ps-3 pb-5 mb-3">
+                  <h3 className="banner-title fs-1 position-relative">
                     FIGHT LIKE A SPIDER
                   </h3>
-                  <p className="banner-description fs-5 w-75 text-secondary mb-1">
+                  <p className="banner-description fs-5 text-secondary mb-1">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
@@ -328,17 +328,17 @@ export default function Home() {
                 className="banner-box-2 d-flex align-items-end text-white p-3"
                 style={{
                   backgroundImage: 'url("/images/sprint.jpg")',
-                  height: "650px",
+                  height: "750px",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <div className="banner-text ps-3 pb-5">
-                  <h3 className="banner-title fs-3 position-relative">
+                <div className="banner-text ps-3 pb-5 mb-3">
+                  <h3 className="banner-title fs-1 position-relative">
                     RUN LIKE A CHEETAH
                   </h3>
-                  <p className="banner-description fs-5 w-75 text-secondary mb-1">
+                  <p className="banner-description fs-5 text-secondary mb-1">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
