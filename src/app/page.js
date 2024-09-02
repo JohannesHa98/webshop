@@ -118,14 +118,14 @@ export default function Home() {
         style={{ backgroundColor: bgColor }}
       >
         <div className="container-fluid d-flex justify-content-between">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand fw-light fs-1 fs-md-3 fs-sm-4 ms-2 ps-2 ms-md-5 ps-md-5" href="#">
             SPORTSHOES.COM
           </a>
-          <div className="navbar-nav">
-            <a className="nav-link" href="#">
+          <div className="navbar-nav me-2 pe-2 me-md-5 pe-md-5">
+            <a className="nav-link text-white ms-3 fs-5 position-relative" href="#">
               MEN
             </a>
-            <a className="nav-link" href="#">
+            <a className="nav-link text-white ms-3 fs-5 position-relative" href="#">
               WOMEN
             </a>
           </div>

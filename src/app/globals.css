@@ -24,24 +24,7 @@ body {
   transform: translateY(0);
 }
 
-.navbar .navbar-brand {
-  font-weight: 300;
-  font-size: 2.5rem;
-  margin-left: 80px;
-}
-
-.navbar-nav {
-  margin-right: 80px;
-}
-
-.navbar-nav .nav-link {
-  color: white;
-  margin-left: 14px;
-  font-size: 1.2rem;
-  position: relative;
-}
-
-.navbar.bg-active .navbar-nav .nav-link:hover::after {
+.navbar .navbar-nav .nav-link:hover::after {
   content: "";
   position: absolute;
   left: 16%;
@@ -51,28 +34,6 @@ body {
   background-color: white;
 }
 
-@media (max-width: 1300px) {
-  .navbar .navbar-brand {
-    margin-left: 10px;
-  }
-  .navbar-nav {
-    margin-right: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar .navbar-brand {
-    font-size: 1.8rem;
-  }
-}
-
-.navbar-nav .nav-link:hover {
-  color: black;
-}
-
-.navbar.bg-active .navbar-nav .nav-link:hover {
-  color: white;
-}
 
 /* Carousel */
 
