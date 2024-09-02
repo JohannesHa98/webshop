@@ -268,7 +268,7 @@ export default function Home() {
                         e.target.src = "https://via.placeholder.com/150";
                       }}
                     />
-                    <p className="product-name">{product.name}</p>
+                    <p className="product-name">{product.name.toUpperCase()}</p>
                   </a>
                 ))
               ) : (

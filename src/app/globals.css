@@ -308,7 +308,7 @@ body {
 }
 
 .product-name {
-  font-size: 20px;
+  font-size: 18px;
   padding-left: 28px;
   align-self: flex-start;
   color: rgb(75, 72, 72);
@@ -316,14 +316,14 @@ body {
 
 @media (max-width: 1024px) {
   .product-name {
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 16px;
   }
 }
 
 @media (max-width: 450px) {
   .product-name {
-    font-size: 14px;
+    font-size: 13px;
     padding-left: 8px;
   }
 }
