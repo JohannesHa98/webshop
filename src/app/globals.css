@@ -11,6 +11,7 @@ body {
   z-index: 1000;
   padding: 1rem 0;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  height: 90px;
 }
 
 .navbar.hidden {
@@ -54,6 +55,12 @@ body {
   }
   .navbar-nav {
     margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .navbar-brand {
+    font-size: 1.9rem;
   }
 }
 
