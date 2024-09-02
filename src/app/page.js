@@ -11,14 +11,6 @@ async function fetchProducts() {
   return data.products;
 }
 
-async function searchProducts(query) {
-  const res = await fetch(
-    `https://webshop.wm3.se/api/v1/shop/products/search?q=${query}&media_file=true`
-  );
-  const data = await res.json();
-  return data.products;
-}
-
 const barlowCondensedMedium = Barlow_Condensed({
   weight: "500",
   subsets: ["latin"],
@@ -52,21 +44,50 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const timeoutId = setTimeout(async () => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const debouncedSearch = debounce(async (query) => {
       try {
-        if (searchQuery === "") {
+        if (query.trim() === "") {
           setFilteredProducts(products);
         } else {
-          const data = await searchProducts(searchQuery);
-          setFilteredProducts(data);
+          const res = await fetch(
+            `https://webshop.wm3.se/api/v1/shop/products/search?q=${query}&media_file=true`,
+            { signal }
+          );
+
+          if (!res.ok) {
+            throw new Error("Failed to fetch products");
+          }
+
+          const data = await res.json();
+          setFilteredProducts(data.products);
         }
       } catch (error) {
-        console.error("Failed to search products", error);
+        if (error.name !== "AbortError") {
+          console.error("Failed to search products", error);
+        }
       }
     }, 300);
 
-    return () => clearTimeout(timeoutId);
+    debouncedSearch(searchQuery);
+
+    return () => {
+      controller.abort();
+      clearTimeout(debouncedSearch);
+    };
   }, [searchQuery, products]);
+
+  function debounce(func, delay) {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
 
   useEffect(() => {
     function handleScroll() {
