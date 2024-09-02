@@ -62,7 +62,7 @@ body {
 
 @media (max-width: 768px) {
   .navbar .navbar-brand {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -77,85 +77,63 @@ body {
 /* Carousel */
 
 .custom-slide {
-  height: 500px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.carousel-indicators{
+  top: 85%;
 }
 
 .custom-slide-1 {
-  background-image: url("/images/bg-2.jpg");
-  height: 100vh;
+  background-image: url("/images/slide1.jpg");
 }
 
 .custom-slide-2 {
-  background-image: url("/images/bg-1.jpg");
-  height: 100vh;
+  background-image: url("/images/slide2.jpg");
 }
 
 .custom-slide-3 {
-  background-image: url("/images/bg-3.jpg");
-  height: 100vh;
+  background-image: url("/images/slide3.jpg");
 }
 
 .carousel-content {
-  color: #fff;
+  position: absolute;
+  top: 66%;
+  left: 27%;
+  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.text-container {
-  position: relative;
-  margin-left: -17%;
-  margin-top: 4%;
-}
-
-.title {
-  font-size: 10rem;
-  color: rgb(29, 27, 27);
-}
-
-.title-color {
-  color: yellow;
-}
-
-.subtitle {
-  display: flex;
-  align-items: baseline;
-  font-size: 1.2rem;
-  margin-top: -4%;
-  margin-left: 1.2%;
-}
-.subtitle-price {
-  padding-left: 4px;
-  font-size: 2.7rem;
+  
 }
 
 .button-group {
   display: flex;
-  margin-top: -1%;
-  margin-left: 1.2%;
+  gap: 1.6vw;
 }
 
 .button-group .btn-primary,
 .button-group .btn-outline-primary {
+  width: 10vw;
+  height: 2.8vw;
+  font-size: 1vw;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  padding: 0;
 }
 
 .button-group .btn-primary {
   background-color: white;
   border: 2px solid white;
-  width: 175px;
-  height: 50px;
-  color: black;
-  font-weight: bold;
-  transition: background-color 0.3s, border-color 0.3s;
-  margin-right: 28px;
+  color: rgb(85, 36, 125);
 }
 
 .button-group .btn-primary:hover {
@@ -165,89 +143,15 @@ body {
 }
 
 .button-group .btn-outline-primary {
+  background-color: transparent;
   border: 2px solid white;
   color: white;
-  width: 175px;
-  height: 50px;
-  font-weight: bold;
-  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .button-group .btn-outline-primary:hover {
-  background-color: black;
-  border-color: black;
-  color: white;
-}
-
-.rotated-image {
-  position: absolute;
-  top: -24%;
-  left: 120%;
-  transform: rotate(340deg) translate(-50%, -50%);
-  z-index: 100;
-  width: 730px;
-  height: auto;
-}
-
-@media (max-width: 1500px) {
-  .text-container {
-    margin-left: -27%;
-  }
-}
-
-@media (max-width: 1300px) {
-  .carousel-content {
-    transform: scale(0.8);
-  }
-  .text-container {
-    margin-left: -32%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .carousel-content {
-    transform: scale(0.6);
-  }
-  .text-container {
-    margin-left: -40%;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-content {
-    transform: scale(0.5);
-  }
-  .text-container {
-    margin-left: -50%;
-  }
-}
-
-@media (max-width: 610px) {
-  .carousel-content {
-    transform: scale(0.5);
-  }
-  .text-container {
-    margin-left: -40%;
-  }
-  .rotated-image {
-    top: 35%;
-    left: 90%;
-    transform: rotate(0deg) translate(-50%, -50%);
-  }
-}
-
-@media (max-width: 420px) {
-  .carousel-content {
-    transform: scale(0.45);
-  }
-  .text-container {
-    margin-left: -45%;
-  }
-  .rotated-image {
-    top: -35%;
-    left: 110%;
-    transform: rotate(315deg) translate(-50%, -50%);
-  }
+  background-color: white;
+  border-color: white;
+  color: black;
 }
 
 /* Products */
@@ -385,28 +289,11 @@ body {
 }
 
 .banner-box {
-  background-image: url("/images/muay-thai.jpg");
+  background-image: url("/images/muay.jpg");
 }
 
 .banner-box-2 {
-  background-image: url("/images/sprinter.jpg");
-}
-
-.banner-box:before,
-.banner-box-2:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 75%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
+  background-image: url("/images/sprint.jpg");
 }
 
 .banner-box h3,

@@ -140,13 +140,7 @@ export default function Home() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active custom-slide custom-slide-1">
-            <div className="carousel-content d-flex align-items-center justify-content-center">
-              <div className="text-container">
-                <h1 className="title">LEBRON XIII 25K</h1>
-                <div className="subtitle">
-                  <p>Started From</p>
-                  <p className="subtitle-price">728$</p>
-                </div>
+            <div className="carousel-content d-flex align-items-center justify-content-start">
                 <div className="button-group">
                   <a href="#" className="btn btn-primary">
                     <span className="btn-text">BUY NOW</span>
@@ -154,75 +148,12 @@ export default function Home() {
                   <a href="#" className="btn btn-outline-primary">
                     LEARN MORE
                   </a>
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/images/shoe.png"
-                    alt="Shoe"
-                    className="rotated-image"
-                    width={500}
-                    height={500}
-                    priority
-                  />
-                </div>
               </div>
             </div>
           </div>
           <div className="carousel-item custom-slide custom-slide-2">
-            <div className="carousel-content d-flex align-items-center justify-content-center">
-              <div className="text-container">
-                <h1 className="title title-color">LEBRON XIII 25K</h1>
-                <div className="subtitle">
-                  <p>Started From</p>
-                  <p className="subtitle-price">728$</p>
-                </div>
-                <div className="button-group">
-                  <a href="#" className="btn btn-primary">
-                    <span className="btn-text">BUY NOW</span>
-                  </a>
-                  <a href="#" className="btn btn-outline-primary">
-                    LEARN MORE
-                  </a>
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/images/shoe.png"
-                    alt="Shoe"
-                    className="rotated-image"
-                    width={500}
-                    height={500}
-                  />
-                </div>
-              </div>
-            </div>
           </div>
           <div className="carousel-item custom-slide custom-slide-3">
-            <div className="carousel-content d-flex align-items-center justify-content-center">
-              <div className="text-container">
-                <h1 className="title">LEBRON XIII 25K</h1>
-                <div className="subtitle">
-                  <p>Started From</p>
-                  <p className="subtitle-price">728$</p>
-                </div>
-                <div className="button-group">
-                  <a href="#" className="btn btn-primary">
-                    <span className="btn-text">BUY NOW</span>
-                  </a>
-                  <a href="#" className="btn btn-outline-primary">
-                    LEARN MORE
-                  </a>
-                </div>
-                <div className="image-container">
-                  <Image
-                    src="/images/shoe.png"
-                    alt="Shoe"
-                    className="rotated-image"
-                    width={500}
-                    height={500}
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
