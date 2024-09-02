@@ -118,14 +118,23 @@ export default function Home() {
         style={{ backgroundColor: bgColor }}
       >
         <div className="container-fluid d-flex justify-content-between">
-          <a className="navbar-brand fw-light fs-1 fs-md-3 fs-sm-4 ms-2 ps-2 ms-md-5 ps-md-5" href="#">
+          <a
+            className="navbar-brand fw-light fs-1 fs-md-3 fs-sm-4 ms-2 ps-2 ms-md-5 ps-md-5"
+            href="#"
+          >
             SPORTSHOES.COM
           </a>
           <div className="navbar-nav me-2 pe-2 me-md-5 pe-md-5">
-            <a className="nav-link text-white ms-3 fs-5 position-relative" href="#">
+            <a
+              className="nav-link text-white ms-3 fs-5 position-relative"
+              href="#"
+            >
               MEN
             </a>
-            <a className="nav-link text-white ms-3 fs-5 position-relative" href="#">
+            <a
+              className="nav-link text-white ms-3 fs-5 position-relative"
+              href="#"
+            >
               WOMEN
             </a>
           </div>
@@ -137,32 +146,79 @@ export default function Home() {
         className="carousel slide"
         data-bs-ride="carousel"
       >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            className="active"
-            aria-label="Slide 1"
-            aria-current="true"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+        <div className="carousel-indicators d-flex align-items-center justify-content-center">
+          <div className="d-flex align-items-center">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              className="active rounded-circle"
+              aria-label="Slide 1"
+              aria-current="true"
+              style={{ width: "12px", height: "12px" }}
+            ></button>
+            <div
+              style={{
+                width: "15px",
+                height: "2px",
+                backgroundColor: "#ddd",
+                marginLeft: "-3px",
+                opacity: 0.6,
+              }}
+            ></div>
+          </div>
+          <div className="d-flex align-items-center">
+            <div
+              style={{
+                width: "15px",
+                height: "2px",
+                backgroundColor: "#ddd",
+                marginRight: "-3px",
+                opacity: 0.6,
+              }}
+            ></div>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              className="rounded-circle"
+              aria-label="Slide 2"
+              style={{ width: "12px", height: "12px" }}
+            ></button>
+            <div
+              style={{
+                width: "15px",
+                height: "2px",
+                backgroundColor: "#ddd",
+                marginLeft: "-3px",
+                opacity: 0.6,
+              }}
+            ></div>
+          </div>
+          <div className="d-flex align-items-center">
+            <div
+              style={{
+                width: "15px",
+                height: "2px",
+                backgroundColor: "#ddd",
+                marginRight: "-3px",
+                opacity: 0.6,
+              }}
+            ></div>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              className="rounded-circle"
+              aria-label="Slide 3"
+              style={{ width: "12px", height: "12px" }}
+            ></button>
+          </div>
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active custom-slide custom-slide-1">
             <div className="carousel-content d-flex align-items-center justify-content-start">
-              <div className="button-group">
+              <div className="button-group d-flex">
                 <a href="#" className="btn btn-primary">
                   <span className="btn-text">BUY NOW</span>
                 </a>
@@ -178,82 +234,122 @@ export default function Home() {
       </section>
 
       <section className="product-grid-1">
-        <div className="container-fluid">
-          <div className="product-grid-container">
-            <div className="search-bar mb-3 position-relative">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search product..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <div className="search-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                  />
-                </svg>
-              </div>
+        <div className="container-lg pt-5">
+          <div className="search-bar mb-3 position-relative">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search product..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <div className="search-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
             </div>
-            <div className="product-grid">
-              {filteredProducts.length > 0 ? (
-                filteredProducts.slice(0, 6).map((product) => (
-                  <a href="#" key={product.id} className="placeholder-box">
-                    <img
-                      src={product.product_image.url}
-                      alt={product.name}
-                      className="img-fluid mt-4"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://via.placeholder.com/150";
-                      }}
-                    />
-                    <p className="product-name">{product.name.toUpperCase()}</p>
+          </div>
+          <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4">
+            {filteredProducts.length > 0 ? (
+              filteredProducts.slice(0, 6).map((product) => (
+                <div className="col" key={product.id}>
+                  <a href="#" className="text-decoration-none">
+                    <div className="card ratio ratio-1x1">
+                      <img
+                        src={product.product_image.url}
+                        alt={product.name}
+                        className="scaled-img"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = "https://via.placeholder.com/150";
+                        }}
+                      />
+                      <div className="card-body d-flex flex-column">
+                        <h5 className="card-title">
+                          {product.name.toUpperCase()}
+                        </h5>
+                      </div>
+                    </div>
                   </a>
-                ))
-              ) : (
-                <p>No products available</p>
-              )}
-            </div>
+                </div>
+              ))
+            ) : (
+              <p>No products found.</p>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="banners">
-        <div className="container">
-          <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <div className="banner-box">
-              <div className="banner-text">
-                <h3 className="banner-title">FIGHT LIKE A SPIDER</h3>
-                <p className="banner-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <a className="banner-link" href="#">
-                  READ MORE
-                </a>
+      <section className="banners py-5 my-5">
+        <div className="container-lg">
+          <div className="row justify-content-center align-items-center gx-0 gy-0">
+            <div className="col-12 col-md-6 mb-md-0">
+              <div
+                className="banner-box d-flex align-items-end text-white p-3"
+                style={{
+                  backgroundImage: 'url("/images/muay.jpg")',
+                  height: "650px",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                <div className="banner-text ps-3 pb-5">
+                  <h3 className="banner-title fs-3 position-relative">
+                    FIGHT LIKE A SPIDER
+                  </h3>
+                  <p className="banner-description fs-5 w-75 text-secondary mb-1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a
+                    className="banner-link fs-4 text-white text-decoration-underline position-relative"
+                    href="#"
+                  >
+                    READ MORE
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="banner-box-2">
-              <div className="banner-text">
-                <h3 className="banner-title">RUN LIKE A CHEETAH</h3>
-                <p className="banner-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <a className="banner-link" href="#">
-                  READ MORE
-                </a>
+            <div className="col-12 col-md-6">
+              <div
+                className="banner-box-2 d-flex align-items-end text-white p-3"
+                style={{
+                  backgroundImage: 'url("/images/sprint.jpg")',
+                  height: "650px",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                <div className="banner-text ps-3 pb-5">
+                  <h3 className="banner-title fs-3 position-relative">
+                    RUN LIKE A CHEETAH
+                  </h3>
+                  <p className="banner-description fs-5 w-75 text-secondary mb-1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a
+                    className="banner-link fs-4 text-white text-decoration-underline position-relative"
+                    href="#"
+                  >
+                    READ MORE
+                  </a>
+                </div>
               </div>
             </div>
           </div>
