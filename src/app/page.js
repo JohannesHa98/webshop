@@ -286,11 +286,11 @@ export default function Home() {
               <div className="feature-text">
                 <h3 className="feature-title">FIGHT LIKE A SPIDER</h3>
                 <p className="feature-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <a className="feature-link" href="#">
-                  Read More
+                  READ MORE
                 </a>
               </div>
             </div>
@@ -298,11 +298,11 @@ export default function Home() {
               <div className="feature-text">
                 <h3 className="feature-title">RUN LIKE A CHEETAH</h3>
                 <p className="feature-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <a className="feature-link" href="#">
-                  Read More
+                  READ MORE
                 </a>
               </div>
             </div>
