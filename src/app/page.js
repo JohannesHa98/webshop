@@ -186,7 +186,7 @@ export default function Home() {
                 </div>
                 <div className="image-container">
                   <Image
-                    src="/images/shoepng.png"
+                    src="/images/shoe.png"
                     alt="Shoe"
                     className="rotated-image"
                     width={500}
@@ -214,7 +214,7 @@ export default function Home() {
                 </div>
                 <div className="image-container">
                   <Image
-                    src="/images/shoepng.png"
+                    src="/images/shoe.png"
                     alt="Shoe"
                     className="rotated-image"
                     width={500}
