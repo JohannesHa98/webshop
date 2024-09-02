@@ -175,12 +175,14 @@ body {
   object-fit: cover;
 }
 
-.banner-description{
+/* Banner */
+
+.banner-description {
   width: 55%;
 }
 
 @media (max-width: 1199px) {
-  .banner-description{
+  .banner-description {
     width: 75%;
   }
 }
