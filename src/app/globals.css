@@ -81,12 +81,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 50%;
   position: relative;
 }
 
-.carousel-indicators{
-  top: 85%;
+.carousel-indicators {
+  top: 90%;
 }
 
 .custom-slide-1 {
@@ -103,13 +103,12 @@ body {
 
 .carousel-content {
   position: absolute;
-  top: 66%;
-  left: 27%;
+  top: 67%;
+  left: 30%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .button-group {

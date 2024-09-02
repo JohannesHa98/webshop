@@ -141,20 +141,18 @@ export default function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active custom-slide custom-slide-1">
             <div className="carousel-content d-flex align-items-center justify-content-start">
-                <div className="button-group">
-                  <a href="#" className="btn btn-primary">
-                    <span className="btn-text">BUY NOW</span>
-                  </a>
-                  <a href="#" className="btn btn-outline-primary">
-                    LEARN MORE
-                  </a>
+              <div className="button-group">
+                <a href="#" className="btn btn-primary">
+                  <span className="btn-text">BUY NOW</span>
+                </a>
+                <a href="#" className="btn btn-outline-primary">
+                  LEARN MORE
+                </a>
               </div>
             </div>
           </div>
-          <div className="carousel-item custom-slide custom-slide-2">
-          </div>
-          <div className="carousel-item custom-slide custom-slide-3">
-          </div>
+          <div className="carousel-item custom-slide custom-slide-2"></div>
+          <div className="carousel-item custom-slide custom-slide-3"></div>
         </div>
       </section>
 
