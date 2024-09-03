@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Webshop Landing page - Next.js & Bootstrap
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running the Project Locally](#running-the-project-locally)
+
+## Project Overview
+
+This webshop app built with Next.js, features dynamic product search, responsive design and a sleek interface using Bootstrap.
+
+## Features
+
+- Responsive design using Bootstrap
+- Product listing with dynamic data fetching
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Styling:** [Bootstrap](https://getbootstrap.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To set up the project locally, follow these steps:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Clone the repository:**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+   ```bash
+   git clone https://github.com/JohannesHa98/webshop.git
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Install the dependencies:**
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+### Running the Project Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To start the development server and run the project locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Start the development server:**
 
-## Deploy on Vercel
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Open your browser and navigate to:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```
+   http://localhost:3000
+   ```
+
+   The webshop should now be up and running locally on your machine.
+
+---
