@@ -3,6 +3,7 @@ body {
 }
 
 /* Navbar */
+
 .navbar {
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
@@ -34,6 +35,7 @@ body {
 }
 
 /* Carousel */
+
 .custom-slide {
   background-size: cover;
   background-position: center;

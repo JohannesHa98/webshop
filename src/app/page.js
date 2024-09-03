@@ -25,6 +25,16 @@ export default function Home() {
   const [bgColor, setBgColor] = useState("transparent");
 
   useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js")
+      .then(() => {
+        console.log("Bootstrap JS loaded");
+      })
+      .catch((err) => {
+        console.error("Failed to load Bootstrap JavaScript", err);
+      });
+  }, []);
+
+  useEffect(() => {
     async function loadProducts() {
       try {
         const data = await fetchProducts();
@@ -35,12 +45,6 @@ export default function Home() {
       }
     }
     loadProducts();
-
-    import("bootstrap/dist/js/bootstrap.bundle.min.js")
-      .then((module) => {})
-      .catch((err) => {
-        console.error("Failed to load Bootstrap JavaScript", err);
-      });
   }, []);
 
   useEffect(() => {
@@ -142,15 +146,16 @@ export default function Home() {
       </nav>
 
       <section
-        id="carouselExampleIndicators"
+        id="carouselIndicators"
         className="carousel slide"
         data-bs-ride="carousel"
+        data-bs-interval="3000"
       >
         <div className="carousel-indicators d-flex align-items-center justify-content-center">
           <div className="d-flex align-items-center">
             <button
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#carouselIndicators"
               data-bs-slide-to="0"
               className="active rounded-circle"
               aria-label="Slide 1"
@@ -179,7 +184,7 @@ export default function Home() {
             ></div>
             <button
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#carouselIndicators"
               data-bs-slide-to="1"
               className="rounded-circle"
               aria-label="Slide 2"
@@ -207,7 +212,7 @@ export default function Home() {
             ></div>
             <button
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#carouselIndicators"
               data-bs-slide-to="2"
               className="rounded-circle"
               aria-label="Slide 3"
