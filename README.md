@@ -1,4 +1,4 @@
-# Webshop Landing page - Next.js & Bootstrap
+# Webshop Landing Page - Next.js & Bootstrap
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
 
 ## Project Overview
 
-This webshop app built with Next.js, features dynamic product search, responsive design and a sleek interface using Bootstrap.
+This webshop app built with Next.js, features dynamic product search, responsive design, and a sleek interface using Bootstrap.
 
 ## Features
 
