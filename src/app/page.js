@@ -25,13 +25,21 @@ export default function Home() {
   const [bgColor, setBgColor] = useState("transparent");
 
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js")
-      .then(() => {
-        console.log("Bootstrap JS loaded");
-      })
-      .catch((err) => {
-        console.error("Failed to load Bootstrap JavaScript", err);
-      });
+    if (typeof window !== "undefined") {
+      import("bootstrap/dist/js/bootstrap.bundle.min.js")
+        .then((bootstrap) => {
+          console.log("Bootstrap JS loaded");
+          const carouselElement = document.querySelector("#carouselIndicators");
+          if (carouselElement) {
+            new bootstrap.Carousel(carouselElement, {
+              interval: 3000,
+            });
+          }
+        })
+        .catch((err) => {
+          console.error("Failed to load Bootstrap JavaScript", err);
+        });
+    }
   }, []);
 
   useEffect(() => {
@@ -149,7 +157,6 @@ export default function Home() {
         id="carouselIndicators"
         className="carousel slide"
         data-bs-ride="carousel"
-        data-bs-interval="3000"
       >
         <div className="carousel-indicators d-flex align-items-center justify-content-center">
           <div className="d-flex align-items-center">
@@ -238,7 +245,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="product-grid-1">
+      <section className="product-grid-1 pt-lg-4">
         <div className="container-lg pt-5">
           <div className="search-bar mb-3 position-relative">
             <input
